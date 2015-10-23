@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">IntentsMultiples</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btnLlamar">Llamar</string>
+    <string name="btnMapa">Buscar en el mapa</string>
+    <string name="btnEmail">Enviar email</string>
+    <string name="editTextNumero" />
+    <string name="editTextMapa" />
+    <string name="editTextEmail" />
+    <string name="destinatario">Destinatario</string>
+    <string name="Mensaje">Mensaje</string>
+    <string name="Asunto">Asunto</string>
+</resources>

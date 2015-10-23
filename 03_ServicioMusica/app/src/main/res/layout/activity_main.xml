@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Michael Bublé - Beautiful day"
+        android:id="@+id/seleccionMichaelBuble"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:onClick="seleccionarCancion" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sam Smith - ..."
+        android:id="@+id/seleccionSamSmith"
+        android:layout_below="@+id/radioButton"
+        android:layout_alignEnd="@+id/radioButton"
+        android:onClick="seleccionarCancion"/>
+    </RadioGroup>
+
+    <ToggleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOn="Stop"
+        android:textOff="Play"
+        android:id="@+id/toggleButtonPlay"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
