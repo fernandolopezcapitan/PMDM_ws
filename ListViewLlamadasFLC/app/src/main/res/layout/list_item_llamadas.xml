@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#a2a2a2"
+
+    android:id="@+id/list_item">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/foto"
+            android:src="@drawable/einstein"
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_margin="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Número de telefono"
+                android:id="@+id/numero"
+                android:textColor="#7b7f82" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:id="@+id/nombre" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha y hora"
+                android:textColor="#7b7f82"
+                android:id="@+id/fecha" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tipoLlamada"
+            android:layout_margin="5dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#7b7f82"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/tipoLlamada" />
+    </LinearLayout>
+
+</RelativeLayout>
