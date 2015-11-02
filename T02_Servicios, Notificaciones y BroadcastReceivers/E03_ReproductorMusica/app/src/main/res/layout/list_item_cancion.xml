@@ -10,11 +10,10 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewCaratula"
         android:src="@drawable/u218singles"
         android:layout_margin="10dp"/>
     <LinearLayout
@@ -27,26 +26,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Titulo cancion"
-            android:textColor="#7b7f82" />
+            android:textColor="#7b7f82"
+            android:id="@+id/TextViewTitulo" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Artista"
             android:textSize="20dp"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:id="@+id/TextViewArtista" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Album"
-            android:textColor="#7b7f82" />
+            android:textColor="#7b7f82"
+            android:id="@+id/TextViewAlbum" />
     </LinearLayout>
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Duracion"
-        android:layout_margin="5dp"
-        android:layout_marginRight="20dp"
-        android:textColor="#7b7f82"
-        android:layout_gravity="center_vertical" />
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duracion"
+            android:layout_margin="5dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#7b7f82"
+            android:layout_gravity="top|center_vertical"
+            android:id="@+id/TextViewDuracion" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_play_verde"
+            android:id="@+id/imageButtonPlayVerde"
+            android:background="#373b3e"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+
+
 </LinearLayout>
 </RelativeLayout>

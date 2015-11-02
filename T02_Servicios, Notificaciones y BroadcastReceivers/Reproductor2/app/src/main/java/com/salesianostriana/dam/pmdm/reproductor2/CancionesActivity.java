@@ -1,26 +1,29 @@
-package com.salesianostriana.dam.di.playerpro;
+package com.salesianostriana.dam.pmdm.reproductor2;
 
-import android.annotation.TargetApi;
 import android.app.ListActivity;
-import android.os.Build;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends ListActivity implements View.OnClickListener{
+public class CancionesActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private ListView lista;
     ImageButton play;
-    boolean star = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.canciones_activity);
+        setContentView(R.layout.activity_canciones);
+
+        lista = (ListView)findViewById(R.id.listView);
+        play = (ImageButton)findViewById(R.id.imageButtonPlayVerde);
 
         ArrayList<ItemCancion> canciones = new ArrayList<ItemCancion>();
         canciones.add(new ItemCancion("Rolling Stones", "Satisfaction", "Greatest Hits", R.drawable.stones, "4:02"));
@@ -29,18 +32,18 @@ public class MainActivity extends ListActivity implements View.OnClickListener{
 
         CancionAdapter adaptador = new CancionAdapter(this,canciones);
 
-        getListView().setAdapter(adaptador);
+        lista.setAdapter(adaptador);
 
-        play = (ImageButton) findViewById(R.id.btn_play);
+        //getListView().setAdapter(adaptador);
+        //lista.getItemAtPosition(0);
         play.setOnClickListener(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_canciones, menu);
         return true;
-
     }
 
     @Override
@@ -58,20 +61,9 @@ public class MainActivity extends ListActivity implements View.OnClickListener{
         return super.onOptionsItemSelected(item);
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_play:
-                if (star) {
-                    play.setImageDrawable(getDrawable(android.R.drawable.ic_media_play));
-                    star = false;
-                } else {
-                    play.setImageDrawable(getDrawable(android.R.drawable.ic_media_pause));
-                    star = true;
-                }
-                break;
-        }
-
+        Intent i = new Intent(CancionesActivity.this,ReproductorActivity.class);
+        startService(i);
     }
 }

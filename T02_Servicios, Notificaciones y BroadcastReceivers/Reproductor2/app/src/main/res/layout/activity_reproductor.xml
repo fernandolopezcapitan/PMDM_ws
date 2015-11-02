@@ -1,9 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#373b3e"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:background="#373b3e"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    tools:context="com.salesianostriana.dam.pmdm.reproductor2.ReproductorActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,34 +17,28 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="U2"
                 android:textSize="15dp"
-                android:textColor="#7b7f82" />
+                android:textColor="#7b7f82"
+                android:id="@+id/artista" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:transitionGroup="true"
                 android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1/12"
-                    android:padding="3dp"
-                    android:textSize="15dp"
-                    android:textColor="#292a2c"
-                    android:background="#b6b5b6" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Beautiful Day"
-                    android:paddingLeft="10dp"
                     android:textSize="20dp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="#ffffff"
+                    android:id="@+id/titulo" />
 
             </LinearLayout>
 
@@ -51,18 +48,19 @@
                 android:layout_height="wrap_content"
                 android:text="U218 Singles"
                 android:textSize="15dp"
-                android:textColor="#7b7f82" />
+                android:textColor="#7b7f82"
+                android:id="@+id/album" />
 
         </LinearLayout>
     </LinearLayout>
 
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:src="@drawable/u218singles"
-            android:layout_weight="1" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/caratula"
+        android:src="@drawable/u2"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,9 +72,10 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:layout_marginLeft="10dp"
-            android:text="2:46"
+            android:text="0:00"
             android:textColor="#7b7f82"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:id="@+id/duracion0" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -111,7 +110,7 @@
             android:layout_marginLeft="10dp"
             android:textColor="#7b7f82"
             android:layout_weight="1"
-            android:id="@+id/time" />
+            android:id="@+id/duracion" />
 
     </LinearLayout>
     <LinearLayout
@@ -128,7 +127,5 @@
             android:indeterminate="false" />
 
     </LinearLayout>
-
-
 
 </LinearLayout>

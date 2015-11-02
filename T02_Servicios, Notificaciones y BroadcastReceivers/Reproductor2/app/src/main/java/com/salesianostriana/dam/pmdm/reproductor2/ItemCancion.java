@@ -1,9 +1,9 @@
-package com.salesianostriana.dam.di.playerpro;
+package com.salesianostriana.dam.pmdm.reproductor2;
 
 
 public class ItemCancion {
     String artista, tituloCancion, album, duracion;
-    int caratula ;
+    int caratula;
 
     public ItemCancion(String grupo, String tituloCancion, String album, int caratula, String duracion) {
         this.artista = grupo;
