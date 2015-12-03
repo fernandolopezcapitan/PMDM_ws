@@ -1,0 +1,15 @@
+T3 PMDM. Mapas
+
+****https://developers.google.com/maps/documentation/javascript/shapes
+
+buscar tb events, setOnMapClickListener xa pinchar y poner en el mapa
+
+Polygon --> addPolyline
+.showInfoWindow --> muestra el bocadillo al picar
+.hideInfoWindow --> oculta el bocadillo al picar
+.moveCamera(CameraUpdateFactory.newLatLongZoom(newYor,15)) --> mueve el mapa a medida q picas
+
+.setIcon(BipMap) --> cambiar icono del marker
+
+****https://developers.google.com/maps/documentation/javascript/examples/polyline-simple
+
