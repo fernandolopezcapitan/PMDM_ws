@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea34579b1be157cd792376362157e9c54ebb4cd7">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-f48bc93e3b1af5ebb27f7515f53a68c165d39943.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0c3e81d3eb86b86d194b5cdb6a4de78203f6f7fd">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-ace0bd36ce4c29021a970fab685da56540960940.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2c6fcd6267cbac6509a2e72a61127534a1d616cf">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-bb7304ea228f2fa805f2b0c0ae336147662106ab.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b000ecceb9877fefcdc7ab1959ff03df91551656">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-5abf974c94cd0339f28d2228740616552b555c75.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-c5d998fef9080b2afa0db57bee874dccb5c73444.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="01a90bbb9495a8bbf6f3cfdf12f1b35caaa9524b">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-f86fbc110e74f940240a4b3c8f89d66634de133f.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4b8df1b1e51fe14b0e89b3845dc2e215a024a09f">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-e146a1a061c6d539436cf2a0f9ed2bd4617737a7.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="71eda10e33212e44245524b5087366ff8d805825">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-ff796b5484a61ffd69b48591e860b59fadf8c3ac.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="697679619b00837e3d09e9988a2e1e2a9009d502">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-c42557bdd317f544e5f49880b02cc793ed17d003.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="cb4af597d079ffdc0984a3ec2c03cbf6a1b9f869">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-466871544f9871e1ffb157a62627368dee807818.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9c9bdb4b2497465a6cf7d5e8f57c5298f828a380">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-192844f7018d1d283d9c4cf06810aed17945862c.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="345a1b5cf5b144ce18ba6962bc66a7e2f26c1c1b">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-d5ac9c6189c79a6f8f52d0626caba1078f081e21.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-e7131868fefd0cd57148d832bb06e32cbc8d455f.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="27775d59b16610ac76f1b83693fedd9520396332">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-a0b1f81ef5d92f396cafdc34eb1aba380a9c2756.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="58adcfbe2c8393765e84c5489d01bba6a5159eb2">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-2a8ca44111f3b8d1d442ea8e834f16d8756b7c3f.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="744c49c02a27569cc4cc049685d3649e4ef439f2">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-6bd89a7ac6a1a9eab634f1ee3cc411f2996f8be9.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-75a0605597aa7e08402ad69274f1fe22d708a249.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="77f9593d979f4347344be233bd0d888315f79517">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-0d9943165f335ac41df17962ec92b51d35e0c256.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="af6ee25641df3142059c0828517aa7ee6eba08d6">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-1a7627deca06aa57c68ade50eac829c8a6861f16.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0a1897426566e408a5c20a3d931f77d89771d07f">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-d73277d9debd26e5a6e8e1cf99f57e62e4a361d4.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-f93c5a9b7bbcdee3c8acb4866ec2ef382173be08.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-c5ac897eccaa3f76e476070a2ddbadce3eb5d0b5.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="724ce977487ab3a215d4d2eb47d8dccd9f30013f">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-7f8c0c0815e478de16e54b289263b4a71ac51d47.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9aedc597d74c6d77258ce5236e9abff0c3cc65e3">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-1374cdd2769dd2225b278d45fb5be42f8069b6de.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6d9ed9a288364688e7fcf6704776284dac1eb42e">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-e08b44b6bef23b137282eb1f8768a723c9077403.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fd76d95678a6b2b8a49bb8a9fb5bcef7aedb70e7">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-65cf4001bcb43c40edb553fa54d1aad3ea6c6579.jar" />
+    </item>
+    <item
+        jar="C:\Android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-a470a558eb3f088eed6eae85d08b5dcfe2a5ef9f.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0af4f577b4a21eb9be2a7f52e33b077b67e6d9f8">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-1a652e2e7eff5fed806a73a77713db37517be208.jar" />
+    </item>
+    <item
+        jar="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="eb576427887e497cd958a475475f9206e38dc314">
+        <dex dex="C:\Users\MariaJose\Documents\GitHub\PMDM_ws\T03_SensoresYMapas\MyApplication\app\build\intermediates\pre-dexed\debug\classes-fc772bf99f8018205fef912fff989b8b3fa7511b.jar" />
+    </item>
+
+</items>
