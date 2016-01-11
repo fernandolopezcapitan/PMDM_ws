@@ -2,13 +2,9 @@ package com.salesianostriana.dam.pmdm.prisionbreakflc;
 
 import android.graphics.Color;
 import android.location.Location;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -19,14 +15,18 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.maps.android.PolyUtil;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
@@ -112,31 +112,61 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // añadir un marcador en el colegio y mover la cámara
-        LatLng clase = new LatLng(37.380285, -6.007007);
+        LatLng clase = new LatLng(38.380285, -6.007007);
 
         final Marker marcador_clase = mMap.addMarker(new MarkerOptions()
                 .position(clase)
                 .draggable(true));
 
         //Opciones del marcador
-        //marcador_clase.setIcon(BitmapDescriptorFactory.fromResource(android.R.drawable.ic_dialog_map));
         marcador_clase.setTitle("clase 2º dam");
         marcador_clase.setSnippet("Colegio Salesiano, Triana");
         marcador_clase.showInfoWindow();
 
         PolygonOptions rectOptions = new PolygonOptions()
-                .add(new LatLng(37.380258, -6.007671),
-                        new LatLng(37.380941, -6.007577),
-                        new LatLng(37.380958, -6.007335),
-                        new LatLng(37.381385, -6.006627),
-                        new LatLng(37.380622, -6.005769),
-                        new LatLng(37.379628, -6.006906))
+                .add(new LatLng(37.379594, -6.006922),
+                        new LatLng(37.380651, -6.008038),
+                        new LatLng(37.380911, -6.007604),
+                        new LatLng(37.380869, -6.007352),
+                        new LatLng(37.381380, -6.006622),
+                        new LatLng(37.380609, -6.005748),
+                        new LatLng(37.379594, -6.006922))
                 .strokeColor(Color.RED)
                 .strokeWidth(15)
                 .fillColor(Color.BLUE);
 
         // Get back the mutable Polygon
         Polygon polygon = mMap.addPolygon(rectOptions);
+
+
+        List<LatLng> points = new ArrayList<>();
+        points.add(new LatLng(37.379594, -6.006922));
+        points.add(new LatLng(37.380651, -6.008038));
+        points.add(new LatLng(37.380911, -6.007604));
+        points.add(new LatLng(37.380869, -6.007352));
+        points.add(new LatLng(37.381380, -6.006622));
+        points.add(new LatLng(37.380609, -6.005748));
+        points.add(new LatLng(37.379594, -6.006922));
+
+        Polygon polygonN = mMap.addPolygon(new PolygonOptions().addAll(points));
+        boolean contain = PolyUtil.containsLocation(clase, points, true);
+
+
+        if(contain) {
+            marcador_clase.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marcador_verde));
+            marcador_clase.setTitle("Dentro del recinto");
+            marcador_clase.setSnippet("Colegio Salesiano, Triana");
+        } else {
+            marcador_clase.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marcador_rojo));
+            marcador_clase.setTitle("¡PRESO HUÍDO!");
+            marcador_clase.setSnippet("Colegio Salesiano, Triana");
+        }
+
+        /*if(rectOptions.getHoles().contains(marcador_clase)){
+            marcador_clase.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marcador_verde));
+        } else {
+            marcador_clase.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marcador_rojo));
+        }*/
 
         //mMap.addMarker(new MarkerOptions().position(colegio).title("Marcador en Colegio Salesiano"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(clase, 15));
@@ -164,7 +194,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // lo hago mediante los métodos: mCurrentLocation.getLatitude()
         // y mCurrentLocation.getLongitude()
         LatLng posicion = new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
-        marker.setPosition(posicion);
+        //marker.setPosition(posicion);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicion, 13));
 
     }
@@ -261,6 +291,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         return inPoly;
     };*/
+    /*
     public boolean dentroRectangulo (LatLng latLng) {
 
         boolean bounds = this.getBounds();
@@ -268,5 +299,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return false;
         }
         return false;
-    }
+    }*/
 }
