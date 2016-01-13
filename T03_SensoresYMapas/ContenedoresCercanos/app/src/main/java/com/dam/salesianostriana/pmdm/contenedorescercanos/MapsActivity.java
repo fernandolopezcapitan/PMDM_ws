@@ -20,19 +20,30 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.SphericalUtil;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
     private GoogleMap mMap;
-    Marker marker, markerC1, markerC2, markerC3, markerC4, markerC5, marcadorUsuario;
+    Marker marker, markerContenedor, markerC1, markerC2, markerC3, markerC4, markerC5, marcadorUsuario;
     private GoogleApiClient mGoogleApiClient = null;
     private Location mCurrentLocation;
     private String mLastUpdateTime;
     private boolean mRequestingLocationUpdates = true;
     private LocationRequest mLocationRequest;
+
+    ArrayList<LatLng> listaContenedores = new ArrayList<LatLng>();
+
+    LatLng contenedor1 = new LatLng(37.379576, -6.006909);
+    LatLng contenedor2 = new LatLng(37.380053, -6.007386);
+    LatLng contenedor3 = new LatLng(37.380676, -6.008030);
+    LatLng contenedor4 = new LatLng(37.265780, -6.063827);
+    LatLng contenedor5 = new LatLng(37.265723, -6.064186);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +75,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void createLocationRequest() {
         mLocationRequest = new LocationRequest();
         // Intervalo de uso normal de la la aplicación
-        mLocationRequest.setInterval(10000);
+        mLocationRequest.setInterval(50000);
         // Interval de una app que requiera una localización exhaustiva
-        mLocationRequest.setFastestInterval(5000);
+        mLocationRequest.setFastestInterval(50000);// 50 segundos
         // GPS > mejor método de localización / consume más batería
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
@@ -86,20 +97,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
 
-        LatLng contenedor1 = new LatLng(37.379576, -6.006909);
-        LatLng contenedor2 = new LatLng(37.380053, -6.007386);
-        LatLng contenedor3 = new LatLng(37.380676, -6.008030);
-        LatLng contenedor4 = new LatLng(37.265780, -6.063827);
-        LatLng contenedor5 = new LatLng(37.265723, -6.064186);
-
-
-        markerC1 = mMap.addMarker(new MarkerOptions().position(contenedor1).title("Contenedor 1").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
-        markerC2 = mMap.addMarker(new MarkerOptions().position(contenedor2).title("Contenedor 2").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
-        markerC3 = mMap.addMarker(new MarkerOptions().position(contenedor3).title("Contenedor 3").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
-        markerC4 = mMap.addMarker(new MarkerOptions().position(contenedor4).title("Contenedor 4").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
-        markerC5 = mMap.addMarker(new MarkerOptions().position(contenedor5).title("Contenedor 5").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
-
-
+        //markerC1 = mMap.addMarker(new MarkerOptions().position(contenedor1).title("Contenedor 1").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        //markerC2 = mMap.addMarker(new MarkerOptions().position(contenedor2).title("Contenedor 2").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        //markerC3 = mMap.addMarker(new MarkerOptions().position(contenedor3).title("Contenedor 3").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        //markerC4 = mMap.addMarker(new MarkerOptions().position(contenedor4).title("Contenedor 4").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        //markerC5 = mMap.addMarker(new MarkerOptions().position(contenedor5).title("Contenedor 5").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
 
         mMap.animateCamera(CameraUpdateFactory.newLatLng(contenedor1));
     }
@@ -113,7 +115,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // guardo la última vez que se actualizó la posición
         // del usuario en un objeto de tipo String
         // (en nuestro ejemplo no lo estamos utilizando)
-        mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
+        //mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
         updateUI();
 
     }
@@ -127,23 +129,34 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // lo hago mediante los métodos: mCurrentLocation.getLatitude()
         // y mCurrentLocation.getLongitude()
 
-        LatLng posicionUsuario = new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
+        // reseteo de marcadores y círculo
+        //marcadorUsuario.remove();
 
+
+
+        LatLng posicionUsuario = new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
         marcadorUsuario = mMap.addMarker(new MarkerOptions().position(posicionUsuario).draggable(true));
 
-        CircleOptions radioBusqueda = new CircleOptions().center(posicionUsuario).radius(100.00).fillColor(getResources().getColor(R.color.transparecia));
+        CircleOptions radioBusqueda = new CircleOptions().center(posicionUsuario).radius(50.00).fillColor(getResources().getColor(R.color.transparecia)).strokeWidth(0).strokeColor(R.color.transparecia);
 
-        // No coje el método si es un circulo en lugar de un polígono....
-        //boolean dentroCirculo = PolyUtil.containsLocation(posicionUsuario,radioBusqueda,true);
-       /* if
-        SphericalUtil.computeDistanceBetween(L)*/
+        // Añadimos 5 contenedores de prueba
+        listaContenedores.add(contenedor1);
+        listaContenedores.add(contenedor2);
+        listaContenedores.add(contenedor3);
+        listaContenedores.add(contenedor4);
+        listaContenedores.add(contenedor5);
 
-
-
-        // Get back the mutable Circle
+        for (int i = 0; i < listaContenedores.size(); i++){
+            double distancia = SphericalUtil.computeDistanceBetween(posicionUsuario,listaContenedores.get(i));
+            DecimalFormat df = new DecimalFormat("#.#");
+            if (distancia < 50){
+                markerContenedor = mMap.addMarker(new MarkerOptions().position(listaContenedores.get(i)).title("Contenedor " + i).snippet("a " + df.format(distancia) + " metros de tí").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+            }
+        }
+        // Dibuja el círculo
         Circle circle = mMap.addCircle(radioBusqueda);
 
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicionUsuario,13));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicionUsuario,18));
 
     }
 
