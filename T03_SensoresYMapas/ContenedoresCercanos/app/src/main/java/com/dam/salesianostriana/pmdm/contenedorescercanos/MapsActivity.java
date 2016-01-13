@@ -1,14 +1,9 @@
 package com.dam.salesianostriana.pmdm.contenedorescercanos;
 
-import android.graphics.Color;
 import android.location.Location;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -25,7 +20,6 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.PolyUtil;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -99,17 +93,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng contenedor5 = new LatLng(37.265723, -6.064186);
 
 
-        markerC1 = mMap.addMarker(new MarkerOptions().position(contenedor1).title("Contenedor 1"));
-        markerC2 = mMap.addMarker(new MarkerOptions().position(contenedor2).title("Contenedor 2"));
-        markerC3 = mMap.addMarker(new MarkerOptions().position(contenedor3).title("Contenedor 3"));
-        markerC4 = mMap.addMarker(new MarkerOptions().position(contenedor4).title("Contenedor 4"));
-        markerC5 = mMap.addMarker(new MarkerOptions().position(contenedor5).title("Contenedor 5"));
+        markerC1 = mMap.addMarker(new MarkerOptions().position(contenedor1).title("Contenedor 1").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        markerC2 = mMap.addMarker(new MarkerOptions().position(contenedor2).title("Contenedor 2").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        markerC3 = mMap.addMarker(new MarkerOptions().position(contenedor3).title("Contenedor 3").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        markerC4 = mMap.addMarker(new MarkerOptions().position(contenedor4).title("Contenedor 4").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+        markerC5 = mMap.addMarker(new MarkerOptions().position(contenedor5).title("Contenedor 5").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
 
-        markerC1.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor));
-        markerC2.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor));
-        markerC3.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor));
-        markerC4.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor));
-        markerC5.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor));
 
 
         mMap.animateCamera(CameraUpdateFactory.newLatLng(contenedor1));
@@ -142,10 +131,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         marcadorUsuario = mMap.addMarker(new MarkerOptions().position(posicionUsuario).draggable(true));
 
-        CircleOptions radioBusqueda = new CircleOptions().center(posicionUsuario).radius(100.00).fillColor(Color.BLUE);
+        CircleOptions radioBusqueda = new CircleOptions().center(posicionUsuario).radius(100.00).fillColor(getResources().getColor(R.color.transparecia));
 
         // No coje el método si es un circulo en lugar de un polígono....
         //boolean dentroCirculo = PolyUtil.containsLocation(posicionUsuario,radioBusqueda,true);
+       /* if
+        SphericalUtil.computeDistanceBetween(L)*/
+
 
 
         // Get back the mutable Circle
