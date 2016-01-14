@@ -22,10 +22,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.SphericalUtil;
 
-import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
@@ -132,12 +130,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // reseteo de marcadores y círculo
         //marcadorUsuario.remove();
 
-
+        mMap.clear();
 
         LatLng posicionUsuario = new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude());
         marcadorUsuario = mMap.addMarker(new MarkerOptions().position(posicionUsuario).draggable(true));
 
-        CircleOptions radioBusqueda = new CircleOptions().center(posicionUsuario).radius(50.00).fillColor(getResources().getColor(R.color.transparecia)).strokeWidth(0).strokeColor(R.color.transparecia);
+        CircleOptions radioBusqueda = new CircleOptions().center(posicionUsuario).radius(100.00).fillColor(getResources().getColor(R.color.transparecia)).strokeWidth(0).strokeColor(R.color.transparecia);
 
         // Añadimos 5 contenedores de prueba
         listaContenedores.add(contenedor1);
@@ -149,8 +147,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         for (int i = 0; i < listaContenedores.size(); i++){
             double distancia = SphericalUtil.computeDistanceBetween(posicionUsuario,listaContenedores.get(i));
             DecimalFormat df = new DecimalFormat("#.#");
-            if (distancia < 50){
-                markerContenedor = mMap.addMarker(new MarkerOptions().position(listaContenedores.get(i)).title("Contenedor " + i).snippet("a " + df.format(distancia) + " metros de tí").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
+            if (distancia < 100){
+                markerContenedor = mMap.addMarker(new MarkerOptions().position(listaContenedores.get(i)).title("Contenedor " + (i+1)).snippet("a " + df.format(distancia) + " metros de tí").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_contenedor)));
             }
         }
         // Dibuja el círculo
