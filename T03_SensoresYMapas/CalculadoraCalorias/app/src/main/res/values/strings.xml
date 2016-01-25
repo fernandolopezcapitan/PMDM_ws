@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Running DAM</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Running DAM</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña (opcional)</string>
+    <string name="action_sign_in">Entrar o registrar</string>
+    <string name="action_sign_in_short">Login</string>
+    <string name="error_invalid_email">Campo usuario no válido</string>
+    <string name="error_invalid_password">Contraseña demasiada corta</string>
+    <string name="error_incorrect_password">Contraseña incorrecta</string>
+    <string name="error_field_required">Campo requerido</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+</resources>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.gms.maps.MapView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:layout_weight="7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Actividad "
+                android:id="@+id/Mapas_Actividad"
+                android:textColor="@android:color/black"
+                android:gravity="left"
+                android:layout_weight="5"/>
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/contar"
+                android:textOff="START"
+                android:textOn="STOP"
+                android:textColor="@color/colorPrimary"
+                android:background="@color/transparet"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUARDAR"
+                android:textColor="@color/colorPrimaryDark"
+                android:background="@color/transparet"
+                android:id="@+id/Mapas_btn_guardar"
+                android:gravity="center" />
+            <!--<Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="START"
+                android:textColor="@color/colorPrimary"
+                android:background="@color/transparet"
+                android:id="@+id/Mapas_btn_empezar"
+
+                android:gravity="center" />
+            -->
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="00.00"
+                    android:textColor="@android:color/black"
+                    android:gravity="left"
+                    android:id="@+id/Mapas_Distancia"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Distancia (km)"
+                    android:gravity="left"
+                    android:id="@+id/Mapas_Distancia2"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <!--<TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="00:00:00"
+                    android:textColor="@android:color/black"
+                    android:gravity="left"
+                    android:id="@+id/Mapas_Duracion"/>-->
+
+                <Chronometer
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="00:00"
+                    android:textColor="@android:color/black"
+                    android:gravity="left"
+                    android:id="@+id/cronometro" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Duración"
+                    android:gravity="left"
+                    android:id="@+id/Mapas_Duracion2"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0000"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/Mapas_Calorias"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Calorías"
+                    android:gravity="right"
+                    android:id="@+id/Mapas_Calorias2"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--<Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Encender lámpara"
+            android:id="@+id/switch1"
+            android:layout_gravity="center_horizontal"
+            android:checked="true" />-->
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
