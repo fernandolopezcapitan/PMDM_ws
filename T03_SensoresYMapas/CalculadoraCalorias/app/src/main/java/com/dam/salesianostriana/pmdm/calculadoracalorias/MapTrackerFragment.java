@@ -126,7 +126,7 @@ public class MapTrackerFragment extends Fragment implements OnMapReadyCallback {
 
                 map.animateCamera(CameraUpdateFactory.newLatLng(latLng));
 
-                marcador.setTitle("Mi posicion");
+                marcador.setTitle("Usuario");
                 marcador.showInfoWindow();
 
                 lista_lat.add(lat_long);
@@ -134,8 +134,8 @@ public class MapTrackerFragment extends Fragment implements OnMapReadyCallback {
 
                 for (int i = 0; i < lista_lat.size(); i++) {
                     options.add(new LatLng(lista_lat.get(i).latitude, lista_lat.get(i).longitude))
-                            .width(15)
-                            .color(Color.BLUE);
+                            .width(5)
+                            .color(Color.RED);
 
                     DecimalFormat decimalFormat = new DecimalFormat("##.##");
                     double metros = SphericalUtil.computeDistanceBetween(lista_lat.get(0), lista_lat.get(lista_lat.size() - 1)) / 1000;
