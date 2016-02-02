@@ -1,6 +1,7 @@
 package com.dam.salesianostriana.pmdm.sound_02flc;
 
 import android.media.AudioAttributes;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +23,22 @@ public class MainActivity extends AppCompatActivity {
         btnSonido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                soundPool.play(sonidoExplosion,1,1,0,0,1);
+
+                MediaPlayer player = MediaPlayer.create(MainActivity.this, R.raw.sim933);
+                int duration = player.getDuration();
+
+                for(int i=0; i<10; i++) {
+                    float left = 1-0.1f*i;
+                    float right = 0+0.1f*i;
+                    soundPool.play(sonidoExplosion, left, right, i, 0, 1);
+
+                    try {
+                        Thread.sleep(duration);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
         });
 
