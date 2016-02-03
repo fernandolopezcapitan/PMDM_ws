@@ -4,18 +4,13 @@ import android.app.Activity;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class MainActivity extends Activity {
 
@@ -27,11 +22,8 @@ public class MainActivity extends Activity {
     RelativeLayout layout;
     SoundPool soundPool;
     int sonidoPato, patos_cazados=0;
-    boolean comienzo;
+    boolean contadorActivado;
 
-    //SoundPool soundPool;
-    //int sonidoPato;
-    //ImageButton btnPato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,65 +39,52 @@ public class MainActivity extends Activity {
         pato.setImageResource(R.drawable.mandarin_duck_icon);
 
         getAleatorios();
-
+        layout.addView(pato);
         pato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                soundPool.play(sonidoPato,1,1,0,0,1);
-                patos_cazados++;
-                getAleatorios();
-                contador_patos_cazados.setText(String.valueOf(patos_cazados));
+
+                if (contadorActivado){
+                    patos_cazados++;
+                    getAleatorios();
+                    contador_patos_cazados.setText(String.valueOf(patos_cazados));
+                    soundPool.play(sonidoPato, 1, 1, 0, 0, 1);
+                }
 
             }
         });
-
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 patos_cazados = 0;
-                layout.addView(pato);
+                contadorActivado = true;
                 start.setEnabled(false);
+                Toast.makeText(MainActivity.this, "¡Dispara!", Toast.LENGTH_SHORT).show();
 
-               // Cuenta atrás
-                ExecutorService executorService = Executors.newFixedThreadPool(1);
-                executorService.execute(new Runnable() {
+                // Cuenta atrás
+                new CountDownTimer(60000,1000){
 
                     @Override
-                    public void run() {
-                        double tiempo = 60;
-                        double frecuencia = Double.parseDouble(String.valueOf(1)) / 1000;
+                    public void onTick(long millisUntilFinished) {
+                        txtTiempoRestante.setText(String.valueOf(millisUntilFinished/1000)+" s.");
+                    }
 
-                        while (tiempo > 0) {
-                            tiempo = tiempo - frecuencia;
+                    @Override
+                    public void onFinish() {
+                        txtTiempoRestante.setText("0 s.");
+                        start.setEnabled(true);
+                        Toast.makeText(MainActivity.this, "Has cazado: "+patos_cazados+" patos en 60 s.", Toast.LENGTH_LONG).show();
 
-                            try {
-                                Thread.sleep((long) (frecuencia * 1000));
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            if (tiempo < 0) {
-                                tiempo = 0;
-                                comienzo = true;
-
-                            } else {
-                                actualizarTiempo(txtTiempoRestante, tiempo);
-                            }
-                        }
+                        contadorActivado = false;
+                        patos_cazados = 0;
+                        contador_patos_cazados.setText(String.valueOf(patos_cazados));
 
                     }
-                });
-                executorService.shutdown();
-
-                if (comienzo){
-                    start.setEnabled(true);
-                    Toast.makeText(MainActivity.this, "Has cazado: "+patos_cazados+" patos en 60 s.", Toast.LENGTH_LONG).show();
-                }
-
+                }.start();
 
             }
         });
-
 
         // Player properties
         AudioAttributes aa = new AudioAttributes.Builder()
@@ -121,7 +100,6 @@ public class MainActivity extends Activity {
         // Cargar sonido de disparo
         sonidoPato = soundPool.load(this,R.raw.soundpato,1);
 
-
     }
 
     public void getAleatorios() {
@@ -135,12 +113,4 @@ public class MainActivity extends Activity {
         pato.setY(numAleatorioY);
     }
 
-    public void actualizarTiempo(final TextView txt, final double tiempoRestante) {
-        txt.post(new Runnable() {
-            @Override
-            public void run() {
-                txt.setText(Integer.toString((int) tiempoRestante) + " s.");
-            }
-        });
-    }
 }
