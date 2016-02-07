@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:compat="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+
+
+    <item android:id="@+id/jugar"
+        android:title="Jugar"
+        android:icon="@drawable/ic_action_ic_play"
+        compat:showAsAction="ifRoom" />
+    <item android:id="@+id/logout"
+        android:title="Cerrar sesión"
+        android:icon="@drawable/ic_action_ic_logout"
+        compat:showAsAction="ifRoom" />
+
+    <!--<item android:id="@+id/action_report"
+        android:title="Report job"/>-->
+
+
+
+</menu>
