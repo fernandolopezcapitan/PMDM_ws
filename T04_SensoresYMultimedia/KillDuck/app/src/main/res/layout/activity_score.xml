@@ -17,16 +17,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Jugadores"/>
+            android:paddingRight="15dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Ranking"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Jugadores"
+            android:layout_weight="1"/>
 
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HI SCORE"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:gravity="right" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
 
     </LinearLayout>

@@ -47,6 +47,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HI SCORE: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ranking: "/>
 
         </LinearLayout>
         <LinearLayout
@@ -69,6 +73,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/hi_score"
+                android:text="0"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/ranking"
                 android:text="0"/>
         </LinearLayout>
 

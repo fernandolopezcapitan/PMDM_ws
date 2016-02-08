@@ -3,23 +3,37 @@ package com.dam.salesianostriana.pmdm.killduck;
 
 import android.app.Dialog;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class DialogoConfirmacion extends DialogFragment {
 
+    String nick;
     int puntuacion;
 
     public DialogoConfirmacion(){
 
     }
 
-    public DialogoConfirmacion(int puntuacion){
+    public DialogoConfirmacion(String nick,int puntuacion){
+        this.nick = nick;
         this.puntuacion = puntuacion;
     }
 
@@ -36,6 +50,9 @@ public class DialogoConfirmacion extends DialogFragment {
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener()  {
                     public void onClick(DialogInterface dialog, int id) {
                         //Log.i("Dialogos", "Confirmacion Aceptada.");
+
+                        sendDatauser(nick,puntuacion);
+
                         dialog.cancel();
                     }
                 })
@@ -49,6 +66,27 @@ public class DialogoConfirmacion extends DialogFragment {
         return builder.create();
     }
 
+    private void sendDatauser(String nick, int puntuacion) {
+        Call<Usuario> hiscoreCall = Servicio.pedirServicio().obtenerUser(nick,String.valueOf(puntuacion));
+        hiscoreCall.enqueue(new Callback<Usuario>() {
+            @Override
+            public void onResponse(Response<Usuario> response, Retrofit retrofit) {
+                //Call<Usuario> result = response.body();
+
+                if (response.code() == 404){
+                    Log.d("ERROR404","No se ha podido subir la puntuación");
+                }else{
+                    Log.d("OK200", "Puntuación actualizada" + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+
+            }
+        });
+
+    }
 
 
 }

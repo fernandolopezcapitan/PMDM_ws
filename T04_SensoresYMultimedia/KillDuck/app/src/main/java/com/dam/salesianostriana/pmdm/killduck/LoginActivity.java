@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.Response;
@@ -34,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
         editor = prefs.edit();
 
-        if (prefs.getString("clave", null) != null) {
+        if (prefs.getString("nick", null) != null) {
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
             LoginActivity.this.finish();
@@ -57,17 +59,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loadDataRegister(final String nick) {
 
-        final Call<String> loginCall = Servicio.pedirServicio().obtenerRegister(nick);
-        loginCall.enqueue(new Callback<String>() {
+        final Call<ArrayList<String>> loginCall = Servicio.pedirServicio().obtenerRegister(nick);
+        loginCall.enqueue(new Callback<ArrayList<String>>() {
             @Override
-            public void onResponse(Response<String> response, Retrofit retrofit) {
-                String login = response.body();
+            public void onResponse(Response<ArrayList<String>> response, Retrofit retrofit) {
 
                 if (response.code() == 404){
                     Toast.makeText(LoginActivity.this, "Fallo de usuario o contraseña", Toast.LENGTH_SHORT).show();
                 }else{
                     editor.putString("nick",nick);
-                    //editor.putInt("hiscore",0);
+                    editor.putInt("hiscore", 0);
                     editor.commit();
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(i);

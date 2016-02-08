@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,12 +30,16 @@ public class MainActivity extends AppCompatActivity {
     SoundPool soundPool;
     int sonidoPato, patos_cazados=0, hiscore=0;
     boolean contadorActivado;
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+    String nick;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         layout = (RelativeLayout) findViewById(R.id.campo_de_tiro);
         contador_patos_cazados = (TextView) findViewById(R.id.patos_cazados);
@@ -43,16 +48,14 @@ public class MainActivity extends AppCompatActivity {
         start = (Button) findViewById(R.id.start);
 
 
-        /*SharedPreferences prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = prefs.edit();
 
-        int valor = prefs.getInt("hiscore", 0);
-
-        hi_score.setText(valor);
-        editor.commit();*/
+        //int valor = prefs.getInt("hiscore", 0);
+        //hi_score.setText(valor);
+        //editor.commit();
 
         pato = new ImageView(this);
         pato.setImageResource(R.drawable.mandarin_duck_icon);
+
 
         getAleatorios();
         layout.addView(pato);
@@ -127,17 +130,17 @@ public class MainActivity extends AppCompatActivity {
 
         //int hiscore = patos_cazados;
 
-        SharedPreferences prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
+        //SharedPreferences prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+        //SharedPreferences.Editor editor = prefs.edit();
 
         if (patos_cazados > hiscore){
-            editor.putInt("hiscore", hiscore);
+            //editor.putInt("hiscore", hiscore);
             hi_score.setText(String.valueOf(patos_cazados));
             hiscore = patos_cazados;
-            editor.commit();
+            //editor.commit();
 
             FragmentManager fragmentManager = getSupportFragmentManager();
-            DialogoConfirmacion dialogo = new DialogoConfirmacion(hiscore);
+            DialogoConfirmacion dialogo = new DialogoConfirmacion(nick,hiscore);
             dialogo.show(fragmentManager, "tagAlerta");
 
         }
@@ -179,8 +182,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.logout: mensaje = "Cerrar sesión";
                 i = new Intent(this,LoginActivity.class);
 
-                SharedPreferences prefs = getSharedPreferences("preferencias",MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
+                prefs = getSharedPreferences("preferencias",MODE_PRIVATE);
+                nick = prefs.getString("nick","");
+                editor = prefs.edit();
                 editor.clear();
                 editor.commit();
 

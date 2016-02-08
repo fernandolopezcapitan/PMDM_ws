@@ -21,7 +21,7 @@ public interface Api {
 
     // Petición REGISTER
     @GET("/killduck/register?")
-    Call<String> obtenerRegister(@Query("nickname") String nickname);
+    Call<ArrayList<String>> obtenerRegister(@Query("nickname") String nickname);
 
     // Petición USER
     @GET("/killduck/user?")
