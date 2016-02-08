@@ -1,6 +1,5 @@
 package com.dam.salesianostriana.pmdm.killduck;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -68,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     soundPool.play(sonidoPato, 1, 1, 0, 0, 1);
                 }
 
+
             }
         });
 
@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(MainActivity.this, "Has cazado: "+patos_cazados+" patos en 60 s.", Toast.LENGTH_LONG).show();
                         maximaPuntuacion();
+
                         contadorActivado = false;
 
                         patos_cazados = 0;
@@ -126,19 +127,18 @@ public class MainActivity extends AppCompatActivity {
 
         //int hiscore = patos_cazados;
 
-        //SharedPreferences prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
-        //SharedPreferences.Editor editor = prefs.edit();
+        SharedPreferences prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
 
         if (patos_cazados > hiscore){
-            //editor.putInt("hiscore",hiscore);
+            editor.putInt("hiscore", hiscore);
             hi_score.setText(String.valueOf(patos_cazados));
             hiscore = patos_cazados;
-            //editor.commit();
+            editor.commit();
 
-            //FragmentManager fragmentManager = getSupportFragmentManager();
-            //DialogoNuevaNota dialogo = new DialogoNuevaNota();
-            //DialogoConfirmacion dialogo = new DialogoConfirmacion();
-            //dialogo.show(fragmentManager, "tagAlerta");
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            DialogoConfirmacion dialogo = new DialogoConfirmacion(hiscore);
+            dialogo.show(fragmentManager, "tagAlerta");
 
         }
 
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("patos_cazados",patos_cazados);
 
                 startActivity(i);
-                MainActivity.this.finish();
+                //MainActivity.this.finish();
                 break;
             case R.id.logout: mensaje = "Cerrar sesión";
                 i = new Intent(this,LoginActivity.class);
@@ -186,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(i);
                 MainActivity.this.finish();
+
                 break;
 
         }
