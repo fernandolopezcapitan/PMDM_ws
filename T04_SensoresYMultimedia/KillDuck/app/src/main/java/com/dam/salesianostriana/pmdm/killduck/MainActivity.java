@@ -1,6 +1,5 @@
 package com.dam.salesianostriana.pmdm.killduck;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioAttributes;
@@ -9,7 +8,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         hi_score = (TextView) findViewById(R.id.hi_score);
         start = (Button) findViewById(R.id.start);
 
+        prefs = getSharedPreferences("preferencias", MODE_PRIVATE);
+        editor = prefs.edit();
+
+        hiscore = prefs.getInt("hiscore",0);
+
+        if(hiscore!=0){
+            hi_score.setText(String.valueOf(prefs.getInt("hiscore",0)));
+        }
 
 
         //int valor = prefs.getInt("hiscore", 0);
@@ -83,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "¡Dispara!", Toast.LENGTH_SHORT).show();
 
                 // Cuenta atrás
-                new CountDownTimer(6000,1000){
+                new CountDownTimer(60000,1000){
 
                     @Override
                     public void onTick(long millisUntilFinished) {
@@ -134,12 +140,15 @@ public class MainActivity extends AppCompatActivity {
         //SharedPreferences.Editor editor = prefs.edit();
 
         if (patos_cazados > hiscore){
-            //editor.putInt("hiscore", hiscore);
-            hi_score.setText(String.valueOf(patos_cazados));
             hiscore = patos_cazados;
+            editor.putInt("hiscore", hiscore);
+            editor.apply();
+            hi_score.setText(String.valueOf(prefs.getInt("hiscore",0)));
+
             //editor.commit();
 
             FragmentManager fragmentManager = getSupportFragmentManager();
+            nick = prefs.getString("nick",null);
             DialogoConfirmacion dialogo = new DialogoConfirmacion(nick,hiscore);
             dialogo.show(fragmentManager, "tagAlerta");
 
@@ -184,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
                 prefs = getSharedPreferences("preferencias",MODE_PRIVATE);
                 nick = prefs.getString("nick","");
-                editor = prefs.edit();
+
                 editor.clear();
                 editor.commit();
 

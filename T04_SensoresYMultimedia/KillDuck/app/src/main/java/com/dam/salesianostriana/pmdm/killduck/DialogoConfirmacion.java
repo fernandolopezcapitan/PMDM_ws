@@ -3,17 +3,11 @@ package com.dam.salesianostriana.pmdm.killduck;
 
 import android.app.Dialog;
 import android.app.Fragment;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import retrofit.Call;
 import retrofit.Callback;
@@ -51,6 +45,8 @@ public class DialogoConfirmacion extends DialogFragment {
                     public void onClick(DialogInterface dialog, int id) {
                         //Log.i("Dialogos", "Confirmacion Aceptada.");
 
+                        Log.i("DIALOG_NICK ",nick);
+                        Log.i("DIALOG_PUNTUACION",String.valueOf(puntuacion));
                         sendDatauser(nick,puntuacion);
 
                         dialog.cancel();
